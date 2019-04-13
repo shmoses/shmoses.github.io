@@ -227,7 +227,7 @@
         </div>
         <div class="content_section_text">
           <p>
-            
+   <!--Google search bar -->         
  <form name="f" method="get" action="http://www.google.com/search">
 
 <center><input type="text" name="q" value="" size="40" framewidth="4"><br></center>
@@ -237,6 +237,74 @@
 <select name="meta"><option value="hl=&amp;lr=" selected="selected">All Languages</option><option value="hl=da&amp;lr=lang_da">Danish</option><option value="hl=nl&amp;lr=lang_nl">Dutch</option><option value="hl=en&amp;lr=lang_en">English</option><option value="hl=fi&amp;lr=lang_fi">Finnish</option><option value="hl=fr&amp;lr=lang_fr">French</option><option value="hl=de&amp;lr=lang_de">German</option><option value="hl=it&amp;lr=lang_it">Italian</option><option value="hl=no&amp;lr=lang_no">Norwegian</option><option value="hl=pt&amp;lr=lang_pt">Portuguese</option><option value="hl=es&amp;lr=lang_es">Spanish</option><option value="hl=sv&amp;lr=lang_sv">Swedish</option><option value="hl=&amp;lr=">Custom</option></select>
    </center>
 </form>
+          <hr>
+          <!-- Lycos search bar -->
+  <script type="text/javascript">
+    function clearSearch() {
+      queryBox = document.getElementById('query');
+
+      if( queryBox.value == 'Search...' ) {
+        queryBox.value = '';
+      }
+      queryBox.style.color = '#292929';
+    }
+    function checkSubmit() {
+      queryBox = document.getElementById('query');
+
+      if( queryBox.value == 'Search...' ) {
+		    clearSearch();
+		    queryBox.focus()
+        return false;
+      }
+      return true;
+    }
+  </script>
+<form action="http://search.lycos.com" method="get" id="searchform" onsubmit="return checkSubmit();">		
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+			function switchSearchTab( newTabUrl )
+			{
+				var query;
+				var queryValue = document.getElementById('query').value;
+
+	   	  if( queryValue == 'Search...' ) {
+            queryValue = '';
+        }
+				if( queryValue ) {
+					query = '&query=' + escape( queryValue );
+        } else {
+					query = '';
+        }
+				top.location.href = newTabUrl + query;
+			}
+
+			function switchSearchTabYP( newTabUrl )
+			{
+				var query;
+				var queryValue = document.getElementById('query').value;
+
+	   	  if( queryValue == 'Search...' ) {
+            queryValue = '';
+        }
+				if( queryValue ) {
+					query = '&C=' + escape( queryValue ) + '&search=Go+Get+It%21';
+        } else {
+					query = '';
+        }
+				top.location.href = newTabUrl + query;
+			}
+		//--><!]]></script>
+<a href="http://search.lycos.com/?tab=multi&amp;cat=images" onclick="switchSearchTab('http://search.lycos.com/?tab=multi&amp;cat=images');return false">IMAGE</a>
+&nbsp;&nbsp;<a href="http://search.lycos.com/?tab=multi&amp;cat=video" onclick="switchSearchTab('http://search.lycos.com/?tab=multi&amp;cat=video');return false">VIDEO</a>
+&nbsp;&nbsp;<a href="http://peoplesearch.lycos.com/?tab=people" onclick="switchSearchTab('http://peoplesearch.lycos.com/?tab=people');return false">PEOPLE</a>
+&nbsp;&nbsp;<a href="http://news.lycos.com/?tab=news" onclick="switchSearchTab('http://news.lycos.com/?tab=news');return false">NEWS</a>
+<div class="searchBox clrfix">
+    <div class="theme"><div class="ctr">
+   <input type="text" name="query" id="query" value="seeking"/>
+   <input type="submit" id="submit" />
+   &nbsp;&nbsp; 
+   </div></div></div></form>
+<br><br>
+          <!-- end of lycos search bar -->
             
           </p>
 
